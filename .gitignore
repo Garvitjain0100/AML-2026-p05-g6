@@ -1,0 +1,23 @@
+
+# P05 dataset: keep large raw data out of Git
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated/processed data
+data/processed/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local environment and secrets
+.env
+
+# OS/editor files
+.DS_Store
+Thumbs.db
