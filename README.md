@@ -13,16 +13,16 @@ The project uses the IMDB 50K Movie Reviews dataset and studies which words cont
 
 ## 2. Team Members
 
-| Name | Enrollment Number | GitHub Username |
-|---|---|---|
-| Shivang Parashar | 590022267 | ShivangParashar |
-| Arshdeep Singh | 25010103645 | Arshdeep-Singh-Dev |
-| Vivek Kuliyal | 25010103872 | VIVEKUK19 |
-| Member 4 | To be added | To be added |
-| Member 5 | To be added | To be added |
-| Member 6 | To be added | To be added |
-| Member 7 | To be added | To be added |
-| Member 8 | To be added | To be added |
+| Name | SAP-ID | Enrollment Number | GitHub Username |
+|---|---|---|---|
+| Shivang Parashar | 590022267 | 25010100737 | ShivangParashar |
+| Arshdeep Singh | To be added | 25010103645 | Arshdeep-Singh-Dev |
+| Vivek Kuliyal | To be added | 25010103872 | VIVEKUK19 |
+| Garvit Jain | 590026685 | 25010101700 | Garvitjain0100 |
+| Member 5 | To be added | To be added | To be added |
+| Member 6 | To be added | To be added | To be added |
+| Member 7 | To be added | To be added | To be added |
+| Member 8 | To be added | To be added | To be added |
 
 
 ## 3. Dataset
