@@ -15,7 +15,7 @@ The project uses the IMDB 50K Movie Reviews dataset and studies which words cont
 
 | Name | Enrollment Number | GitHub Username |
 |---|---|---|
-| Member 1 | To be added | To be added |
+| Shivang Parashar | 590022267 | ShivangParashar |
 | Member 2 | To be added | To be added |
 | Member 3 | To be added | To be added |
 | Member 4 | To be added | To be added |
