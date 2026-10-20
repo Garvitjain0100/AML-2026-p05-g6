@@ -21,7 +21,7 @@ The project uses the IMDB 50K Movie Reviews dataset and studies which words cont
 | Garvit Jain | 590026685 | 25010101700 | Garvitjain0100 |
 | Arjun Gupta | 590028000 | 25010103045 | arjungupta006 |
 | Satvik Indoria | 590023384 | 25010101710 | Satvik-indoria |
-| Neelansh Jha | 590028270 | 250010103608 | neelansh |
+|Member 7 | To be added | To be added | To be added |
 | Member 8 | To be added | To be added | To be added |
 
 
@@ -30,8 +30,7 @@ The project uses the IMDB 50K Movie Reviews dataset and studies which words cont
 **Dataset:** IMDB 50K Movie Reviews  
 **Source:** https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
 
-Download the dataset through Kaggle using a browser. Check whether a permitted copy is available through the course LMS first.
-
+Download the dataset through Kaggle using a browser.
 The dataset is approximately 66 MB. It will not be committed to Git. Follow the dataset instructions in this README and place the downloaded CSV in `data/raw/`.
 
 ## 4. Planned Methodology
