@@ -22,7 +22,7 @@ The project uses the IMDB 50K Movie Reviews dataset and studies which words cont
 | Arjun Gupta | 590028000 | 25010103045 | arjungupta006 |
 | Satvik Indoria | 590023384 | 25010101710 | Satvik-indoria |
 |Prince Bisht | 590027473 | 25010104012 | Prince-Bisht |
-| Member 8 | To be added | To be added | To be added |
+| Priyanshu Kumar | 590025327 | 25010103182 |priyanshukumar-bot|
 
 
 ## 3. Dataset
