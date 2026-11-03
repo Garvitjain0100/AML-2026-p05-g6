@@ -1,0 +1,24 @@
+# Data handling
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+
+# Machine learning and evaluation
+scikit-learn
+joblib
+
+# HTML parsing used in preprocessing
+beautifulsoup4
+
+# Text stemming used in preprocessing
+snowballstemmer
+
+# Jupyter notebook environment
+jupyter
+ipykernel
+
+# Python standard-library modules such as html, pathlib, re, and string
+# are used by the project but are included with Python and need no pip install.
