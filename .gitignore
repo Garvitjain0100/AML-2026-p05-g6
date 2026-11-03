@@ -3,8 +3,6 @@
 data/raw/*
 !data/raw/.gitkeep
 
-# Generated/processed data
-data/processed/
 
 # Python
 __pycache__/
