@@ -1,0 +1,5 @@
+Model,Best Parameters,CV Accuracy,CV Accuracy (%)
+Linear SVM,{'classifier__C': 1},0.9140129009742315,91.4
+Logistic Regression,{'classifier__C': 10},0.9128131071843963,91.28
+Multinomial Naive Bayes,{'classifier__alpha': 0.1},0.8891666565923199,88.92
+Random Forest,{'classifier__max_depth': 15},0.8043294232060033,80.43
