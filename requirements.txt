@@ -1,24 +1,19 @@
 # Data handling
-numpy
-pandas
+numpy==2.5.4
+pandas==3.1.1
 
 # Visualization
-matplotlib
-seaborn
+matplotlib==3.11.2
+seaborn==0.13.2
 
 # Machine learning and evaluation
-scikit-learn
-joblib
+scikit-learn==1.9.1
+joblib==1.6.0
 
-# HTML parsing used in preprocessing
-beautifulsoup4
+# HTML parsing and text processing
+beautifulsoup4==4.15.0
+snowballstemmer==3.1.1
 
-# Text stemming used in preprocessing
-snowballstemmer
-
-# Jupyter notebook environment
-jupyter
-ipykernel
-
-# Python standard-library modules such as html, pathlib, re, and string
-# are used by the project but are included with Python and need no pip install.
+# Notebook environment
+jupyter==1.1.1
+ipykernel==7.4.0
