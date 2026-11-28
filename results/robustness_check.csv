@@ -1,0 +1,4 @@
+Transformation,Prediction Agreement,Accuracy After Transformation,F1 After Transformation
+uppercase,1.0,0.9115469281568941,0.9125618199802176
+html_wrapped,1.0,0.9115469281568941,0.9125618199802176
+extra_whitespace,1.0,0.9115469281568941,0.9125618199802176
