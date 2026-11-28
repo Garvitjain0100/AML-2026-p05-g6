@@ -28,15 +28,14 @@ Recreate the environment from a clean checkout:
     cd AML-2026-p05-g6
     python -m venv .venv
     source .venv/bin/activate        # Windows: .venv\Scripts\activate
-    pip install -r requirements.txt
 
-`requirements.txt` lists the packages without version numbers, so pip installs
-the newest releases. To get exactly the versions in the table above, install
-them with `pip install package==version`.
+Install the pinned dependencies using:
 
-On the UPES network `pip install` can fail because of the campus TLS
-appliance. If it does, install from home or mobile data. Certificate
-verification is never disabled anywhere in this repository.
+    python -m pip install -r requirements.txt
+
+The requirements file specifies the package versions used for
+the reported experiments. This helps maintain a consistent
+environment when reproducing the project.
 
 ## 2. Manual step: the raw data
 
@@ -57,31 +56,64 @@ the two CSVs are present.
 
 ## 3. Random seeds
 
-Every seeded step uses the value 42.
+The project uses random seed 42 wherever a randomised operation
+requires a reproducible result. The same seed is used consistently
+across the notebooks so that the data split, cross-validation folds,
+model configurations and sampled error examples can be reproduced.
 
-| Where | Seed | Purpose |
+The locations of the seed settings are listed below.
+
+| Notebook | Location | Purpose |
 |---|---|---|
-| `notebooks/01-eda.ipynb` (`random_state=42`, two places) | 42 | train/test split and the other seeded step in the EDA notebook |
-| `notebooks/02-preprocessing.ipynb` | 42 | `StratifiedKFold` and the baseline logistic regression |
-| `notebooks/03-models.ipynb` | 42 | `StratifiedKFold` for all four grid searches, `LinearSVC`, `RandomForestClassifier` |
-| `notebooks/04-evaluation.ipynb` (`random_state=42`, four places) | 42 | model settings and cross-validation in the evaluation notebook |
+| `01-eda.ipynb` | `GroupShuffleSplit` | Reproducible 80:20 train/test split |
+| `01-eda.ipynb` | `StratifiedGroupKFold` | Reproducible five-fold cross-validation on the training data |
+| `02-preprocessing.ipynb` | Baseline `LogisticRegression` pipeline | Sets the classifier random state |
+| `02-preprocessing.ipynb` | `StratifiedKFold` | Reproducible five-fold cross-validation |
+| `02-preprocessing.ipynb` | Logistic Regression pipelines in the preprocessing ablation and feature-representation experiments | Consistent model configuration across experiments |
+| `03-models.ipynb` | `StratifiedKFold` | Reproducible cross-validation for model selection |
+| `03-models.ipynb` | `LinearSVC` | Sets the Linear SVM random state |
+| `03-models.ipynb` | `RandomForestClassifier` | Reproducible random forest training |
+| `04-evaluation.ipynb` | `LogisticRegression` and `RandomForestClassifier` | Sets the random state in the final model configurations |
+| `04-evaluation.ipynb` | `learning_curve` | Reproducible shuffling of training samples |
+| `04-evaluation.ipynb` | `DataFrame.sample` | Reproducible selection of 30 misclassified reviews for manual inspection |
 
-Logistic regression and Multinomial Naive Bayes have no random component in
-the way they are used here.
+All the random-state settings listed above use the value `42`.
+Logistic Regression and Multinomial Naive Bayes are otherwise
+deterministic in the configurations used in this project.
+
+The seed settings are defined directly in the relevant notebook
+cells rather than through a separate global seed variable.
 
 ## 4. Run order
 
-Run from the repository root with the environment active, using Restart & Run All
-in each notebook:
+Run the notebooks from the `notebooks/` directory so that their
+relative data and results paths resolve correctly.
 
-1. `notebooks/01-eda.ipynb`: explores the data and writes `data/processed/train.csv` and `test.csv`
-2. `notebooks/02-preprocessing.ipynb`: baseline and cleaning ablation (HTML stripping, lowercasing, punctuation, stop-words)
-3. `notebooks/03-models.ipynb`: tunes Logistic Regression, Naive Bayes, Linear SVM and Random Forest with 5-fold stratified CV; writes `results/model_comparison.csv` and `results/cv_results.csv`
-4. `notebooks/04-evaluation.ipynb`: test-set metrics, ROC curves, top weighted words, learning curve; writes `results/metrics.csv` and the figures in `results/figures/`
+From the repository root, activate the virtual environment and run:
 
-Command-line alternative:
+    cd notebooks
+    jupyter lab
 
-    jupyter nbconvert --to notebook --execute --inplace notebooks/<name>.ipynb
+Use Restart & Run All in this exact order:
+
+1. `01-eda.ipynb`
+   Loads the raw IMDB dataset, performs EDA, creates the
+   duplicate-aware train/test split and saves the processed CSV files.
+
+2. `02-preprocessing.ipynb`
+   Runs the cleaning ablation and compares count and TF-IDF
+   representations.
+
+3. `03-models.ipynb`
+   Performs five-fold cross-validation and model selection.
+
+4. `04-evaluation.ipynb`
+   Evaluates the selected models on the held-out test set and
+   generates the metrics, figures and error-analysis outputs.
+
+Notebook 01 requires the manually downloaded raw dataset.
+Notebooks 02–04 can use the processed train and test CSV files
+already stored in `data/processed/`.
 
 ## 5. Runtime and memory
 
